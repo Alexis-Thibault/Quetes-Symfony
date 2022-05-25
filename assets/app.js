@@ -10,5 +10,6 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+require('bootstrap');   
 
 let html = `<img src="${logoPath}" alt="ACME logo">`;
