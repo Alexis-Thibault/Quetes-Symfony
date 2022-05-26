@@ -22,9 +22,21 @@ class Program
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $poster;
 
-    #[ORM\ManyToOne(targetEntity: Category::class)]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'programs')]
     private $category;
+
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
 
     public function getId(): ?int
     {
@@ -63,18 +75,6 @@ class Program
     public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }
