@@ -22,7 +22,8 @@ class CategoryController extends AbstractController
             'categories' => $categories,
         ]);
     }
-    #[Route('/category/new', name: 'new')]
+    
+    #[Route('/category/new', name: 'category_new')]
     public function new(Request $request, CategoryRepository $categoryRepository) : Response
     {
         $category = new Category();
