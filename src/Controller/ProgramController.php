@@ -9,7 +9,6 @@ use App\Form\ProgramType;
 use App\Repository\EpisodeRepository;
 use App\Repository\ProgramRepository;
 use App\Repository\SeasonRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +27,7 @@ class ProgramController extends AbstractController
         );
     }
 
-    #[Route('/program/new', name: 'new')]
+    #[Route('/program/new', name: 'program_new')]
     public function new(Request $request, ProgramRepository $programRepository) : Response
     {
         $program = new Program();
