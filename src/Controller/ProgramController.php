@@ -49,7 +49,7 @@ class ProgramController extends AbstractController
     }
 
 
-    #[Route('/show/{id<^[0-9]+$>}', methods:['GET'], name: 'program_show')]
+    #[Route('/show/{id}', methods:['GET'], name: 'program_show')]
     public function show(Program $program, SeasonRepository $seasonRepository): Response
     {
         $seasons = $seasonRepository->findBy(['program' => $program]);
