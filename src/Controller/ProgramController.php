@@ -66,8 +66,6 @@ class ProgramController extends AbstractController
     public function show(Program $program, SeasonRepository $seasonRepository): Response
     {
 
-
-
         if (!$program) {
             throw $this->createNotFoundException(
                 'No program with id : ' . $program . ' found in program\'s table.'
